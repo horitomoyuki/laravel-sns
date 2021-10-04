@@ -13,7 +13,7 @@ class ArticleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -36,5 +36,4 @@ class ArticleRequest extends FormRequest
             'body' => '本文',
         ];
     }
-
 }

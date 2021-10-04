@@ -10,15 +10,18 @@ class ArticleController extends Controller
 {
     public function __construct()
     {
-        $this->authorizeResource(Article::class,'article');
-    }
-    
-    public function index() {
-        $articles = Article::all()->sortByDesc('created_at');
-        return view('articles.index',['articles' => $articles]);
+        $this->authorizeResource(Article::class, 'article');
     }
 
-    public function create() {
+    public function index()
+    {
+        $articles = Article::all()->sortByDesc('created_at');
+
+        return view('articles.index', ['articles' => $articles]);
+    }
+
+    public function create()
+    {
         return view('articles.create');
     }
 
@@ -32,7 +35,7 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        return view('articles.edit', ['article' => $article]);    
+        return view('articles.edit', ['article' => $article]);
     }
 
     public function update(ArticleRequest $request, Article $article)
