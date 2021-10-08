@@ -10,7 +10,7 @@
       </div>
     </div>
 
-  @if( Auth::id() === $article->user_id )
+    @if( Auth::id() === $article->user_id )
     <!-- dropdown -->
       <div class="ml-auto card-text">
         <div class="dropdown">
@@ -73,6 +73,7 @@
     <div class="card-text">
       <article-like
         :initial-is-liked-by='@json($article->isLikedBy(Auth::user()))'
+        :initial-count-likes='@json($article->count_likes)'
       >
       </article-like>
     </div>
